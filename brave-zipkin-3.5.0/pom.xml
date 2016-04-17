@@ -47,7 +47,10 @@
         <pkgArtifactId>brave-core</pkgArtifactId>
         <pkgVersion>3.5.0</pkgVersion>
         <servicemix.osgi.export.pkg>
-            com.github.kristofa.brave
+            com.github.kristofa.brave,
+            com.github.kristofa.brave.internal,
+            com.github.kristofa.brave.scribe,
+            com.twitter.zipkin.gen
         </servicemix.osgi.export.pkg>
         <servicemix.osgi.import.pkg>
         </servicemix.osgi.import.pkg>
@@ -59,7 +62,11 @@
             <artifactId>${pkgArtifactId}</artifactId>
             <version>${pkgVersion}</version>
         </dependency>
-
+            <dependency>
+      <groupId>com.github.kristofa</groupId>
+      <artifactId>brave-spancollector-scribe</artifactId>
+      <version>${pkgVersion}</version>
+    </dependency>
         <!-- sources -->
         <dependency>
             <groupId>${pkgGroupId}</groupId>
